@@ -1,0 +1,55 @@
+h3 {
+  margin-left: 50px;
+  text-align: center;
+}
+table {
+  width: 450px;
+  height: 450px;
+  border: 5px solid;
+  border-color: darkslategray;
+  border-radius: 0.2rem;
+}
+
+.white {
+  background: white;
+  border: 1px black solid;
+}
+.black {
+  background: black;
+}
+
+table tr::before {
+  content: attr(data-line);
+  position: absolute;
+  margin: 1rem 0 0rem -1.5rem;
+  font-size: larger;
+  color: black;
+}
+
+table tr::after {
+  content: attr(data-line);
+  position: absolute;
+  margin: 1rem 0 0rem 0.8rem;
+  font-size: larger;
+  color: black;
+}
+
+table tr:first-child > td::before {
+  content: attr(data-col);
+  position: absolute;
+  margin: -4rem 0 0rem 0rem;
+  font-size: larger;
+  color: black;
+}
+
+table tr:last-child > td::after {
+  content: attr(data-col);
+  position: absolute;
+  margin: 2.6rem 0 0rem 0rem;
+  font-size: larger;
+  color: black;
+}
+td:hover {
+  background: green;
+  cursor: pointer;
+}
